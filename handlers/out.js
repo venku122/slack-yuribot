@@ -12,8 +12,13 @@ module.exports = function (req, res, next) {
     return res.status(200).end();
   }
 
+  var text = req.body.text;
+  if (text.indexOf("sexy") == -1) {
+    return res.status(200).end();
+  } 
+
   var botPayload = {
-    text: 'Hello, ' + userName + '!'
+    text: 'https://www.google.co.kr/search?q=sexy&newwindow=1&biw=1244&bih=682&source=lnms&tbm=isch&sa=X&ei=z81AVer4NYe4mwXFj4CgCw&ved=0CAYQ_AUoAQ'
   };
   return res.status(200).json(botPayload);
 }

@@ -6,9 +6,9 @@ module.exports = function (req, res, next) {
     return res.status(200).end();
   }
 
+  var roll: Math.floor(Math.random()*6) + 1;
   var botPayload = {
-    roll: Math.floor(Math.random()*6) + 1 
+    text: 'You got ' + roll + ', dude!'
   };
- 
   return res.status(200).json(botPayload);
 }
