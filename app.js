@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var outHandler = require('./handlers/outgoing');
-var inHandler = require('./handlers/ingoing');
+var outHandler = require('./handlers/out');
+var inHandler = require('./handlers/in');
 var slashHandler = require('./handlers/slash');
  
 var app = express();
