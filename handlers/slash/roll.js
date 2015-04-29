@@ -1,4 +1,4 @@
-var TOKEN = 'r2gFaK5a25wh6VYL8vWzq2qJ';
+var TOKEN = 'xnl6CvlwJ6bGM5QEg4UVuyOb';
 
 module.exports = function (req, res, next) {
   var token = req.body.token;
@@ -6,7 +6,7 @@ module.exports = function (req, res, next) {
     return res.status(200).end();
   }
 
-  var roll: Math.floor(Math.random()*6) + 1;
+  var roll = Math.floor(Math.random()*6) + 1;
   var botPayload = {
     text: 'You got ' + roll + ', dude!'
   };
