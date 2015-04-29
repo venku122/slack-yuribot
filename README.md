@@ -1,5 +1,7 @@
 # slackbot-nodoubt
 
+A slackbot sample which supports outgoing, incoming webhooks and slash command.
+
 ## Installing
 
 ```
