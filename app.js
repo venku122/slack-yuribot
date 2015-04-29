@@ -8,9 +8,9 @@ var app = express();
 var port = process.env.PORT || 3000;
  
 // body parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
  
-// test route
+// handler mapping
 app.post('/outhook', outHandler);
 app.post('/inhook', inHandler);
 app.post('/slash/roll', rollHandler);
