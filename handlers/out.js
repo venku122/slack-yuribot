@@ -1,5 +1,5 @@
 var BOT_NAME = 'slackbot';
-var TOKEN = '6J09yxyd5IpCNjzQfm5XOG8q';
+var TOKEN = '50dHrPcZZjEGObSgW6RZITfE';
 
 module.exports = function (req, res, next) {
   var userName = req.body.user_name;
@@ -8,15 +8,15 @@ module.exports = function (req, res, next) {
   };
   return res.status(200).json(botPayload);
 
-  var token = req.body.token;
-  if (token !== TOKEN) {
-    return res.status(200).end();
-  }
+  // var token = req.body.token;
+  // if (token !== TOKEN) {
+  //   return res.status(200).end();
+  // }
 
-  var userName = req.body.user_name;
-  if (userName === BOT_NAME) {
-    return res.status(200).end();
-  }
+  // var userName = req.body.user_name;
+  // if (userName === BOT_NAME) {
+  //   return res.status(200).end();
+  // }
 
   // var text = req.body.text;
   // if (text.indexOf("sexy") === -1) {
