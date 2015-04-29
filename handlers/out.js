@@ -2,6 +2,7 @@ var BOT_NAME = 'slackbot';
 var TOKEN = '6J09yxyd5IpCNjzQfm5XOG8q';
 
 module.exports = function (req, res, next) {
+  var userName = req.body.user_name;
   var botPayload = {
     text: userName
   };
