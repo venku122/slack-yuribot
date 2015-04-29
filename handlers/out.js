@@ -13,7 +13,7 @@ module.exports = function (req, res, next) {
   }
 
   var text = req.body.text;
-  if (text.indexOf("sexy") == -1) {
+  if (text.indexOf("sexy") === -1) {
     return res.status(200).end();
   } 
 
