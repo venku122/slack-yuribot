@@ -21,4 +21,4 @@ module.exports = function (req, res, next) {
     text: 'http://goo.gl/GL8UGi'
   };
   return res.status(200).json(botPayload);
-}
+};

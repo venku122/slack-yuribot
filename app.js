@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var outHandler = require('./handlers/out');
 var inHandler = require('./handlers/in');
+var outHandler = require('./handlers/out');
 var rollHandler = require('./handlers/slash/roll');
  
 var app = express();
@@ -11,8 +11,8 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
  
 // handler mapping
-app.post('/outhook', outHandler);
 app.post('/inhook', inHandler);
+app.post('/outhook', outHandler);
 app.post('/slash/roll', rollHandler);
  
 // error handler
@@ -23,4 +23,4 @@ app.use(function (err, req, res, next) {
  
 app.listen(port, function () {
   console.log('Slack bot listening on port ' + port);
-})
+});
