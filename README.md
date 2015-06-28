@@ -1,4 +1,4 @@
-# slackbot-nodoubt
+# slackbot-boilerplate-nodejs
 
 A slackbot sample which supports outgoing, incoming webhooks and slash command.
 
