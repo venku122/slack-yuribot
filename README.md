@@ -11,5 +11,5 @@ $ npm install
 ## Run Server
 
 ```
-$ node app.js
+$ npm start
 ```
