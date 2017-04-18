@@ -7,6 +7,9 @@ module.exports = function (req, res, next) {
   }
 
   var roll = Math.floor(Math.random()*6) + 1;
-  var botPayload = 'You got ' + roll + ', dude!';
+  var botPayload = {
+    response_type: 'in_channel',
+    text: `You got ${roll}, dude!`,
+  };
   return res.status(200).json(botPayload);
 };
