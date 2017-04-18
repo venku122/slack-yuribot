@@ -1,4 +1,4 @@
-var TOKEN = 'xnl6CvlwJ6bGM5QEg4UVuyOb';
+var TOKEN = '9acvorsfKnqvrjy5AjzU3yKy';
 
 module.exports = function (req, res, next) {
   var token = req.body.token;

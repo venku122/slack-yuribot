@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 // handler mapping
 app.post('/inhook', inHandler);
 app.post('/outhook', outHandler);
-app.post('/slash/roll', rollHandler);
+app.post('/yuri', rollHandler);
  
 // error handler
 app.use(function (err, req, res, next) {
