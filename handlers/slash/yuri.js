@@ -30,7 +30,8 @@ module.exports = function (req, res, next) {
     if (items.length === 0) {
       return res.status(200).json(botPayload);
     }
-    var item = items[0];
+    var index = Math.floor(Math.random() * items.length);
+    var item = items[index];
     var title = item.data[0].title;
     var description = item.data[0].description;
     var nasaImage = item.links[0].href;
