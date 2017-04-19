@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var inHandler = require('./handlers/in');
 var outHandler = require('./handlers/out');
-var rollHandler = require('./handlers/slash/roll');
+var yuriHandler = require('./handlers/slash/yuri');
  
 var app = express();
 var port = process.env.PORT || 3000;
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 // handler mapping
 app.post('/inhook', inHandler);
 app.post('/outhook', outHandler);
-app.post('/yuri', rollHandler);
+app.post('/yuri', yuriHandler);
  
 // error handler
 app.use(function (err, req, res, next) {
