@@ -3,7 +3,8 @@ var bodyParser = require('body-parser');
 var inHandler = require('./handlers/in');
 var outHandler = require('./handlers/out');
 var yuriHandler = require('./handlers/slash/yuri');
- 
+var apodHandler = require('./handlers/slash/apod');
+
 var app = express();
 var port = process.env.PORT || 3000;
  
@@ -14,7 +15,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/inhook', inHandler);
 app.post('/outhook', outHandler);
 app.post('/yuri', yuriHandler);
- 
+app.post('/apod', apodHandler);
+
 // error handler
 app.use(function (err, req, res, next) {
   console.error(err.stack);

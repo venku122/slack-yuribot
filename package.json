@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apod": "^0.3.0",
     "body-parser": "^1.x.x",
     "dotenv": "^4.0.0",
     "express": "^4.x.x",
