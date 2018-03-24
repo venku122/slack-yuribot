@@ -1,9 +1,9 @@
 require('dotenv').config();
-var request = require('request');
+const request = require('request');
 
-var TOKEN = process.env.SLACK_INTEGRATION_TOKEN;
-var NASAUrl = process.env.NASA_API_ROOT;
-var notFoundPayload = Object.freeze({
+const TOKEN = process.env.SLACK_INTEGRATION_TOKEN;
+const NASAUrl = process.env.NASA_API_ROOT;
+const notFoundPayload = Object.freeze({
   response_type: 'ephemeral',
   text: 'There was an issue with your query',
   attachments: [
@@ -13,30 +13,30 @@ var notFoundPayload = Object.freeze({
   ],
 });
 
-module.exports = function (req, res, next) {
-  var token = req.body.token;
-  if (token !== TOKEN) {
+const yuriHandler = (req, res) => {
+  const reqToken = req.body.token;
+  if (reqToken !== TOKEN) {
     return res.status(200).end();
   }
 
-  var query = req.body.text;
+  const query = req.body.text;
   if (!query) {
     return res.status(200).json(notFoundPayload);
   }
 
   // send query to nasa api
   request(`${NASAUrl}/search?q=${query}&media_type=image`, (err, nasaRes, nasaBody) => {
-    var items = JSON.parse(nasaBody).collection.items;
+    const items = JSON.parse(nasaBody).collection.items;
     if (items.length === 0) {
       return res.status(200).json(notFoundPayload);
     }
-    var index = Math.floor(Math.random() * items.length);
-    var item = items[index];
-    var title = item.data[0].title;
-    var description = item.data[0].description;
-    var nasaImage = item.links[0].href;
+    const index = Math.floor(Math.random() * items.length);
+    const item = items[index];
+    const title = item.data[0].title;
+    const description = item.data[0].description;
+    const nasaImage = item.links[0].href;
 
-    var botPayload = {
+    const botPayload = {
       response_type: 'in_channel',
       text: `*${title}*`,
       mrkdwn: true,
@@ -52,3 +52,5 @@ module.exports = function (req, res, next) {
     return res.status(200).json(botPayload);
   });
 };
+
+export default yuriHandler;
